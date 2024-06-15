@@ -31,7 +31,7 @@ const login = async (req, res) => {
 
     const { accessToken, refreshToken } = await generateTokens(user._id);
     const options = {
-      httpOnly: true,
+      // httpOnly: true,
       secure: true,
     };
 
