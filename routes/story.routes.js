@@ -7,9 +7,9 @@ const verifyJWT = require("../middleware/auth.middleware.js");
 //   res.redirect("/user/login");
 // });
 
-router.post("/add",verifyJWT, storyController.addStory);
-router.post('/update/:id',verifyJWT, storyController.editStory);
-router.get('/read/:id',verifyJWT,storyController.readStory);
+router.post("/add", storyController.addStory);
+router.post('/update/:id', storyController.editStory);
+router.get('/read/:id',storyController.readStory);
 router.get('/getStory', storyController.getStory)
 router.post('/addComment/:id', storyController.addcomment)
 
