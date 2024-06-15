@@ -15,7 +15,10 @@ app.use(cors({
   origin: ['http://localhost:5173', 'https://storytellingkg.netlify.app'],
   credentials: true, 
 }));
-app.use(cookieParser());
+app.use(cookieParser({
+  secure: true,
+  sameSite: 'none'
+}));
 
 mongoose.connect(`${process.env.MONGO_URL}`)
 .then(()=>console.log("Connected to MongoDB!"))
